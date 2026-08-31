@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manas Hospital Dhawas Jaipur - Multi-speciality hospital providing 24/7 Emergency, Trauma Care, ICU, RGHS, and Ayushman Bharat facilities." />
+  <title>Manas Hospital | Dhawas, 200 Feet Bypass, Jaipur</title>
+  
+  <style>
+    /* ==========================================================================
+       1. Design Variables & Global Reset
+       ========================================================================== */
+    :root {
+      --primary: #0284c7;        /* Medical Cyan/Blue */
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --teal: #0d9488;           /* Healing Teal */
+      --teal-light: #ccfbf1;
+      --emergency: #dc2626;      /* High-Visibility Red */
+      --emergency-hover: #b91c1c;
+      --text-main: #0f172a;      /* Slate 900 */
+      --text-muted: #475569;     /* Slate 600 */
+      --bg-page: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08);
+      --radius: 8px;
+      --radius-lg: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       2. Emergency & 24/7 Helpline Strip
+       ========================================================================== */
+    .emergency-bar {
+      background-color: var(--emergency);
+      color: #ffffff;
+      padding: 0.55rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .emergency-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .emergency-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-emergency-call {
+      background: #ffffff;
+      color: var(--emergency);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .btn-emergency-call:hover {
+      background: #ffe4e6;
+    }
+
+    /* ==========================================================================
+       3. Main Header Navigation
+       ========================================================================== */
+    header.main-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 74px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .brand-logo svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--primary);
+    }
+
+    .brand-logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: #bae6fd;
+    }
+
+    /* ==========================================================================
+       4. Hero Section
+       ========================================================================== */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      color: #0c4a6e;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats-card {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-item h3 {
+      font-size: 1.85rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .stat-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       5. Quick Actions
+       ========================================================================== */
+    .quick-actions {
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 4rem;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .action-card {
+      background: var(--surface);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .action-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .action-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .action-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .action-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       6. Clinical Departments (Tabs)
+       ========================================================================== */
+    .departments {
+      padding: 4rem 0;
+    }
+
+    .dept-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .dept-tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .dept-tab-btn.active, .dept-tab-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .dept-content-box {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dept-pane {
+      display: none;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .dept-pane.active {
+      display: grid;
+    }
+
+    .dept-info h3 {
+      font-size: 1.45rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .dept-highlights {
+      list-style: none;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .dept-highlights li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .dept-highlights li::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       7. Doctor Directory
+       ========================================================================== */
+    .doctor-directory {
+      padding: 4rem 0;
+      background: #f1f5f9;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .search-input, .filter-select {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .doctor-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .doc-avatar {
+      height: 150px;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .doc-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .doc-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .doc-dept {
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .doc-degrees {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .doc-body .btn {
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       8. Appointment Booking Form
+       ========================================================================== */
+    .appointment-section {
+      padding: 4.5rem 0;
+    }
+
+    .booking-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2.5rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* ==========================================================================
+       9. Hospital Location & Map Info
+       ========================================================================== */
+    .location-section {
+      padding: 4rem 0;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .location-details-box {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .location-details-box h3 {
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .location-details-box p {
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .map-placeholder {
+      background: #e2e8f0;
+      border-radius: var(--radius-lg);
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* ==========================================================================
+       10. Schemes Bar
+       ========================================================================== */
+    .schemes-section {
+      padding: 3.5rem 0;
+      background: var(--surface);
+    }
+
+    .schemes-pills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .scheme-badge {
+      background: var(--teal-light);
+      color: var(--teal);
+      border: 1px solid #99f6e4;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================================================
+       11. Footer
+       ========================================================================== */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: #94a3b8;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid, .dept-pane, .location-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emergency-bar">
+    <div class="container emergency-flex">
+      <div>
+        🚨 <strong>Manas Hospital 24/7 Emergency & ICU:</strong> <a href="tel:01412250000" style="color:#fff; text-decoration:underline;">0141-2250000</a> | Mobile: <a href="tel:919829000000" style="color:#fff; text-decoration:underline;">+91 98290 XXXXX</a>
+      </div>
+      <div class="emergency-actions">
+        <span>Ambulance on Standby (Dhawas / 200 Ft Bypass)</span>
+        <a href="tel:01412250000" class="btn-emergency-call">📞 Call ER Now</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <svg viewBox="0 0 24 24"><path d="M19 10.5h-4.5V6a1.5 1.5 0 0 0-3 0v4.5H7a1.5 1.5 0 0 0 0 3h4.5V18a1.5 1.5 0 0 0 3 0v-4.5H19a1.5 1.5 0 0 0 0-3z"/></svg>
+        Manas<span>Hospital</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#doctors">Specialists</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#schemes">RGHS / Schemes</a></li>
+          <li><a href="#location">Find Us (Dhawas)</a></li>
+          <li><a href="#booking" class="btn btn-primary">Book Appointment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Trusted Healthcare at Dhawas, 200 Feet Bypass, Jaipur</h1>
+        <p>Manas Hospital provides state-of-the-art critical care, emergency trauma, modular operation theatres, orthopaedics, obstetrics, and general surgery for Jaipur and surrounding communities.</p>
+        <div class="hero-ctas">
+          <a href="#booking" class="btn btn-primary">Book OPD Consultation</a>
+          <a href="#location" class="btn btn-secondary">Get Location / Directions</a>
+        </div>
+      </div>
+      <div class="hero-stats-card">
+        <div class="stat-grid">
+          <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Trauma & ICU Facility</p>
+          </div>
+          <div class="stat-item">
+            <h3>RGHS</h3>
+            <p>Cashless Treatment Available</p>
+          </div>
+          <div class="stat-item">
+            <h3>Modular</h3>
+            <p>Advanced Operation Theatres</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Commitment to Patient Care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container quick-actions">
+    <div class="action-grid">
+      <div class="action-card" onclick="document.getElementById('doctors').scrollIntoView({behavior: 'smooth'})">
+        <div class="action-icon">🩺</div>
+        <h3>Find a Specialist</h3>
+        <p>Consult senior surgeons, gynaecologists, and physicians.</p>
+      </div>
+      <div class="action-card" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">
+        <div class="action-icon">📅</div>
+        <h3>Book OPD Visit</h3>
+        <p>Avoid waiting times by pre-booking your slot.</p>
+      </div>
+      <div class="action-card" onclick="document.getElementById('schemes').scrollIntoView({behavior: 'smooth'})">
+        <div class="action-icon">🛡️</div>
+        <h3>RGHS & Ayushman Helpdesk</h3>
+        <p>Govt. health scheme coverage and documentation support.</p>
+      </div>
+      <div class="action-card" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'})">
+        <div class="action-icon">📍</div>
+        <h3>Hospital Location</h3>
+        <p>Situated conveniently near 200 Ft Bypass, Dhawas, Jaipur.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="departments" id="departments">
+    <div class="container">
+      <h2 class="section-title">Clinical Specialities & Services</h2>
+      <p class="section-subtitle">Delivering compassionate medical care with multi-speciality teams and diagnostic infrastructure.</p>
+
+      <div class="dept-tabs">
+        <button class="dept-tab-btn active" onclick="switchDept('trauma', this)">Emergency & ICU</button>
+        <button class="dept-tab-btn" onclick="switchDept('ortho', this)">Orthopaedics & Joint</button>
+        <button class="dept-tab-btn" onclick="switchDept('gynae', this)">Obstetrics & Gynaecology</button>
+        <button class="dept-tab-btn" onclick="switchDept('surgery', this)">General & Laparoscopic</button>
+        <button class="dept-tab-btn" onclick="switchDept('medicine', this)">General Medicine</button>
+      </div>
+
+      <div class="dept-content-box">
+        <div id="dept-trauma" class="dept-pane active">
+          <div class="dept-info">
+            <h3>24/7 Trauma Care & Intensive Care Unit (ICU)</h3>
+            <p>Equipped to handle polytrauma, accidental emergencies, respiratory failure, and acute critical conditions around the clock.</p>
+            <ul class="dept-highlights">
+              <li>Advanced Multi-Para monitors and modern ventilators</li>
+              <li>24-hour emergency medical officer (EMO) on duty</li>
+              <li>Dedicated digital pathology and digital X-ray</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary" onclick="prefillDept('Emergency & ICU')">Request ER Contact</a>
+          </div>
+          <div style="background: var(--primary-light); height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🚨</div>
+        </div>
+
+        <div id="dept-ortho" class="dept-pane">
+          <div class="dept-info">
+            <h3>Orthopaedics, Fracture & Trauma Centre</h3>
+            <p>Comprehensive bone and joint care ranging from routine plaster & fracture reduction to advanced joint replacements.</p>
+            <ul class="dept-highlights">
+              <li>Complex trauma & pelvi-acetabular fracture fixations</li>
+              <li>Arthroscopic ligament repairs and sports injury care</li>
+              <li>Arthritis management and knee/hip replacements</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary" onclick="prefillDept('Orthopaedics')">Book Ortho OPD</a>
+          </div>
+          <div style="background: var(--primary-light); height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🦴</div>
+        </div>
+
+        <div id="dept-gynae" class="dept-pane">
+          <div class="dept-info">
+            <h3>Obstetrics, Maternity & Gynaecology</h3>
+            <p>Complete maternal healthcare, normal and caesarean deliveries, and comprehensive women's health clinics.</p>
+            <ul class="dept-highlights">
+              <li>Painless delivery options & antenatal care packages</li>
+              <li>Laparoscopic hysterectomy and ovarian cystectomies</li>
+              <li>Infertility consultation and adolescent health</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary" onclick="prefillDept('Obstetrics & Gynaecology')">Consult Gynaecologist</a>
+          </div>
+          <div style="background: var(--primary-light); height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🌸</div>
+        </div>
+
+        <div id="dept-surgery" class="dept-pane">
+          <div class="dept-info">
+            <h3>General & Laparoscopic Surgery</h3>
+            <p>Minimally invasive keyhole surgical treatments ensuring faster patient discharge and minimal scars.</p>
+            <ul class="dept-highlights">
+              <li>Laparoscopic Gallbladder (Cholecystectomy) and Appendix removal</li>
+              <li>Modern Hernia repair (Inguinal, Umbilical, Incisional)</li>
+              <li>Laser Proctology for Piles, Fissure, and Fistula</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary" onclick="prefillDept('General & Laparoscopic Surgery')">Consult Surgeon</a>
+          </div>
+          <div style="background: var(--primary-light); height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🔬</div>
+        </div>
+
+        <div id="dept-medicine" class="dept-pane">
+          <div class="dept-info">
+            <h3>General Medicine & Diabetology</h3>
+            <p>Comprehensive outpatient and inpatient management of infectious diseases, diabetes, hypertension, and seasonal fevers.</p>
+            <ul class="dept-highlights">
+              <li>Dengue, Malaria, Typhoid, and Viral illness care</li>
+              <li>Hypertension, Thyroid, and Lipid disorder treatment</li>
+              <li>Geriatric and preventive wellness health check-ups</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary" onclick="prefillDept('General Medicine')">Book Physician OPD</a>
+          </div>
+          <div style="background: var(--primary-light); height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🩺</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doctor-directory" id="doctors">
+    <div class="container">
+      <h2 class="section-title">Specialist Consultants</h2>
+      <p class="section-subtitle">Experienced doctors practicing at Manas Hospital, Dhawas, Jaipur.</p>
+
+      <div class="filter-bar">
+        <input type="text" id="docSearch" class="search-input" placeholder="Search doctor by name or department..." oninput="filterDoctors()" />
+        <select id="docDeptFilter" class="filter-select" onchange="filterDoctors()">
+          <option value="ALL">All Departments</option>
+          <option value="Orthopaedics">Orthopaedics</option>
+          <option value="Obstetrics & Gynaecology">Obstetrics & Gynaecology</option>
+          <option value="General & Laparoscopic Surgery">General & Laparoscopic Surgery</option>
+          <option value="General Medicine">General Medicine</option>
+          <option value="Emergency & ICU">Emergency & ICU</option>
+        </select>
+      </div>
+
+      <div class="doctors-grid" id="doctorsContainer">
+        </div>
+    </div>
+  </section>
+
+  <section class="appointment-section" id="booking">
+    <div class="container">
+      <div class="booking-card">
+        <h2 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-dark);">Book an OPD Appointment</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Manas Hospital - Dhawas, 200 Feet Bypass, Jaipur</p>
+
+        <form id="appointmentForm" onsubmit="handleBooking(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="formDept">Department / Speciality *</label>
+              <select id="formDept" required onchange="populateDoctors()">
+                <option value="">-- Choose Department --</option>
+                <option value="Orthopaedics">Orthopaedics</option>
+                <option value="Obstetrics & Gynaecology">Obstetrics & Gynaecology</option>
+                <option value="General & Laparoscopic Surgery">General & Laparoscopic Surgery</option>
+                <option value="General Medicine">General Medicine</option>
+                <option value="Emergency & ICU">Emergency & ICU</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formDoc">Select Doctor *</label>
+              <select id="formDoc" required>
+                <option value="">-- Choose Department First --</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formDate">Appointment Date *</label>
+              <input type="date" id="formDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="formSlot">Preferred OPD Time Slot *</label>
+              <select id="formSlot" required>
+                <option value="10:00 AM - 01:00 PM">Morning OPD (10:00 AM - 01:00 PM)</option>
+                <option value="05:00 PM - 08:00 PM">Evening OPD (05:00 PM - 08:00 PM)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="patientName">Patient Full Name *</label>
+              <input type="text" id="patientName" placeholder="e.g. Rajesh Meena" required />
+            </div>
+
+            <div class="form-group">
+              <label for="patientPhone">Contact Mobile Number *</label>
+              <input type="tel" id="patientPhone" placeholder="10-digit mobile number" required pattern="[0-9]{10}" />
+            </div>
+
+            <div class="form-group">
+              <label for="patientScheme">Government Scheme / Insurance</label>
+              <select id="patientScheme">
+                <option value="Self Pay / Private">General / Cash</option>
+                <option value="RGHS (Rajasthan Govt Health Scheme)">RGHS (Rajasthan Govt Health Scheme)</option>
+                <option value="Ayushman Bharat / Chiranjeevi (PMJAY)">Ayushman Bharat / PMJAY</option>
+                <option value="TPA Private Insurance">Private TPA Health Insurance</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="patientReason">Reason for Visit (Optional)</label>
+              <input type="text" id="patientReason" placeholder="e.g., Joint pain, Fever, Routine checkup" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem;">Confirm Appointment Registration</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="schemes-section" id="schemes">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">Empanelled Health Schemes</h2>
+      <p class="section-subtitle">Cashless facilities and subsidized medical care for eligible beneficiaries.</p>
+      
+      <div class="schemes-pills">
+        <span class="scheme-badge">✓ RGHS (Rajasthan Govt Health Scheme)</span>
+        <span class="scheme-badge">✓ Ayushman Bharat (AB-PMJAY)</span>
+        <span class="scheme-badge">✓ Cashless TPA / Mediclaim</span>
+        <span class="scheme-badge">✓ 24/7 Pharmacy & In-House Diagnostics</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="location-section" id="location">
+    <div class="container">
+      <h2 class="section-title">Hospital Address & Location</h2>
+      <p class="section-subtitle">Conveniently accessible from Ajmer Road, 200 Feet Bypass, and Vaishali Nagar West.</p>
+
+      <div class="location-grid">
+        <div class="location-details-box">
+          <h3>🏥 Manas Hospital, Jaipur</h3>
+          <p><strong>📍 Address:</strong> Dhawas, Near 200 Feet Bypass Road, Ajmer Road / Sirsi Road Connector, Jaipur, Rajasthan 302021</p>
+          <p><strong>📞 Emergency Line:</strong> 0141-2250000 / +91 98290 XXXXX</p>
+          <p><strong>🕒 OPD Hours:</strong> Mon - Sat: 09:00 AM – 08:00 PM</p>
+          <p><strong>🚨 Emergency & Trauma:</strong> Open 24 Hours, 365 Days</p>
+          <a href="https://maps.google.com" target="_blank" class="btn btn-secondary" style="margin-top: 0.5rem;">Open in Google Maps ↗</a>
+        </div>
+
+        <div class="map-placeholder">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🗺️</div>
+          <p><strong>Manas Hospital - Dhawas, Jaipur</strong></p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Located at the 200 Feet Bypass junction, Dhawas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Manas Hospital</h4>
+          <p>Dhawas, 200 Feet Bypass Road,<br>Jaipur, Rajasthan - 302021</p>
+          <p style="margin-top: 0.75rem;"><strong>Emergency 24x7:</strong> 0141-2250000</p>
+        </div>
+        <div class="footer-col">
+          <h4>Key Departments</h4>
+          <ul>
+            <li><a href="#departments">Trauma & ICU Care</a></li>
+            <li><a href="#departments">Orthopaedics & Joint Replacement</a></li>
+            <li><a href="#departments">Obstetrics & Maternity</a></li>
+            <li><a href="#departments">General & Laparoscopic Surgery</a></li>
+            <li><a href="#departments">General Medicine</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Patient Services</h4>
+          <ul>
+            <li><a href="#booking">Book Appointment</a></li>
+            <li><a href="#schemes">RGHS Cashless Desk</a></li>
+            <li><a href="#schemes">Ayushman Bharat Helpdesk</a></li>
+            <li><a href="#location">Directions & Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Facilities</h4>
+          <p>🚑 24/7 Ambulance Service</p>
+          <p>🔬 In-house Pathology & Digital X-Ray</p>
+          <p>💊 24-Hour Medical Store / Pharmacy</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Manas Hospital, Dhawas, Jaipur. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-card">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">✅</div>
+      <h3 style="color: var(--primary-dark); margin-bottom: 0.5rem;">OPD Appointment Confirmed</h3>
+      <p id="modalDetails" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;"></p>
+      <div style="background: var(--bg-page); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: monospace;">
+        Token No: <strong id="tokenNum">MNS-00000</strong>
+      </div>
+      <button class="btn btn-primary" style="width: 100%;" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Doctors Directory Mock Data for Manas Hospital
+    const doctors = [
+      { name: "Senior Orthopaedic Surgeon", dept: "Orthopaedics", degrees: "MBBS, MS (Orthopaedics)", title: "Consultant - Fracture, Trauma & Joint Care", icon: "👨‍⚕️" },
+      { name: "Senior Gynaecologist & Obstetrician", dept: "Obstetrics & Gynaecology", degrees: "MBBS, MS / DGO (Obs & Gynae)", title: "Consultant - Maternal & Women Health", icon: "👩‍⚕️" },
+      { name: "Senior General & Laparoscopic Surgeon", dept: "General & Laparoscopic Surgery", degrees: "MBBS, MS (General Surgery)", title: "Consultant - Laparoscopy & Hernia/Piles Specialist", icon: "👨‍⚕️" },
+      { name: "Consultant Physician", dept: "General Medicine", degrees: "MBBS, MD (Medicine)", title: "Senior Medical Specialist & Diabetologist", icon: "👨‍⚕️" },
+      { name: "Critical Care Specialist", dept: "Emergency & ICU", degrees: "MBBS, DA / IDCCM", title: "In-Charge - 24/7 ICU & Emergency Services", icon: "👨‍⚕️" }
+    ];
+
+    // Render Doctor Cards
+    function renderDoctors(list) {
+      const container = document.getElementById('doctorsContainer');
+      container.innerHTML = '';
+
+      if (list.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No doctor matching your selection.</p>';
+        return;
+      }
+
+      list.forEach(doc => {
+        const card = document.createElement('div');
+        card.className = 'doctor-card';
+        card.innerHTML = `
+          <div class="doc-avatar">${doc.icon}</div>
+          <div class="doc-body">
+            <div class="doc-name">${doc.name}</div>
+            <div class="doc-dept">${doc.dept}</div>
+            <div class="doc-degrees">${doc.degrees}<br><small style="color:var(--text-muted);">${doc.title}</small></div>
+            <button class="btn btn-secondary" onclick="bookDoc('${doc.dept}', '${doc.name}')">Book Appointment</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Filter Logic
+    function filterDoctors() {
+      const q = document.getElementById('docSearch').value.toLowerCase();
+      const d = document.getElementById('docDeptFilter').value;
+
+      const filtered = doctors.filter(doc => {
+        const matchesQuery = doc.name.toLowerCase().includes(q) || doc.title.toLowerCase().includes(q) || doc.dept.toLowerCase().includes(q);
+        const matchesDept = (d === 'ALL' || doc.dept === d);
+        return matchesQuery && matchesDept;
+      });
+
+      renderDoctors(filtered);
+    }
+
+    // Tab Switching
+    function switchDept(key, btn) {
+      document.querySelectorAll('.dept-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.dept-pane').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById(`dept-${key}`);
+      if (target) target.classList.add('active');
+    }
+
+    // Dynamic Form Doctor Population
+    function populateDoctors() {
+      const dept = document.getElementById('formDept').value;
+      const select = document.getElementById('formDoc');
+      select.innerHTML = '<option value="">-- Choose Doctor --</option>';
+
+      if (!dept) {
+        select.innerHTML = '<option value="">-- Choose Department First --</option>';
+        return;
+      }
+
+      const match = doctors.filter(d => d.dept === dept);
+      match.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.name;
+        opt.textContent = `${d.name} (${d.dept})`;
+        select.appendChild(opt);
+      });
+    }
+
+    function prefillDept(deptName) {
+      document.getElementById('formDept').value = deptName;
+      populateDoctors();
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function bookDoc(dept, name) {
+      document.getElementById('formDept').value = dept;
+      populateDoctors();
+      document.getElementById('formDoc').value = name;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Naya Updated Code (WhatsApp Integration ke sath):
+function handleBooking(e) {
+  e.preventDefault();
+  const name = document.getElementById('patientName').value;
+  const phone = document.getElementById('patientPhone').value;
+  const dept = document.getElementById('formDept').value;
+  const doc = document.getElementById('formDoc').value;
+  const date = document.getElementById('formDate').value;
+  const slot = document.getElementById('formSlot').value;
+  const scheme = document.getElementById('patientScheme').value;
+
+  // 1. Random Token generate karein
+  const ref = 'MNS-' + Math.floor(10000 + Math.random() * 90000);
+  document.getElementById('tokenNum').textContent = ref;
+  document.getElementById('modalDetails').textContent = 
+    `Thank you ${name}. Your OPD appointment with ${doc} at Manas Hospital (Dhawas) has been scheduled for ${date} during ${slot}.`;
+
+  // 2. Screen par pop-up show karein
+  document.getElementById('confirmModal').classList.add('active');
+
+  // 3. Hospital ka WhatsApp Number (Country code '91' ke sath)
+  // Yahan apna 10-digit real WhatsApp number likhein:
+  const hospitalWhatsApp = "918824413287";
+
+  // Message format karein
+  const message = `*🏥 New Appointment Request - Manas Hospital*%0A` +
+                  `*Token ID:* ${ref}%0A%0A` +
+                  `*Patient Name:* ${encodeURIComponent(name)}%0A` +
+                  `*Contact:* ${encodeURIComponent(phone)}%0A` +
+                  `*Department:* ${encodeURIComponent(dept)}%0A` +
+                  `*Doctor:* ${encodeURIComponent(doc)}%0A` +
+                  `*Date:* ${encodeURIComponent(date)}%0A` +
+                  `*Time Slot:* ${encodeURIComponent(slot)}%0A` +
+                  `*Scheme/Billing:* ${encodeURIComponent(scheme)}`;
+
+  // Patient ko direct WhatsApp par redirect karein
+  window.open(`https://wa.me/${hospitalWhatsApp}?text=${message}`, '_blank');
+}
+
+    function closeModal() {
+      document.getElementById('confirmModal').classList.remove('active');
+      document.getElementById('appointmentForm').reset();
+      populateDoctors();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDoctors(doctors);
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('formDate').setAttribute('min', today);
+    });
+  </script>
+</body>
+</html>
