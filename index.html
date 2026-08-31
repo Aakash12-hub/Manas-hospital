@@ -1148,9 +1148,10 @@
       document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Naya Updated Code (WhatsApp Integration ke sath):
-function handleBooking(e) {
+ function handleBooking(e) {
   e.preventDefault();
+
+  // 1. Collect form data
   const name = document.getElementById('patientName').value;
   const phone = document.getElementById('patientPhone').value;
   const dept = document.getElementById('formDept').value;
@@ -1159,32 +1160,34 @@ function handleBooking(e) {
   const slot = document.getElementById('formSlot').value;
   const scheme = document.getElementById('patientScheme').value;
 
-  // 1. Random Token generate karein
+  // 2. Generate Reference Token & Display Confirmation Modal
   const ref = 'MNS-' + Math.floor(10000 + Math.random() * 90000);
   document.getElementById('tokenNum').textContent = ref;
   document.getElementById('modalDetails').textContent = 
-    `Thank you ${name}. Your OPD appointment with ${doc} at Manas Hospital (Dhawas) has been scheduled for ${date} during ${slot}.`;
-
-  // 2. Screen par pop-up show karein
+    `Thank you ${name}. Your appointment with ${doc} on ${date} (${slot}) has been scheduled.`;
   document.getElementById('confirmModal').classList.add('active');
 
-  // 3. Hospital ka WhatsApp Number (Country code '91' ke sath)
-  // Yahan apna 10-digit real WhatsApp number likhein:
-  const hospitalWhatsApp = "918824413287";
+  // 3. Prepare payload for Google Sheets
+  const payload = {
+    ref: ref,
+    name: name,
+    phone: phone,
+    dept: dept,
+    doc: doc,
+    date: date,
+    slot: slot,
+    scheme: scheme
+  };
 
-  // Message format karein
-  const message = `*🏥 New Appointment Request - Manas Hospital*%0A` +
-                  `*Token ID:* ${ref}%0A%0A` +
-                  `*Patient Name:* ${encodeURIComponent(name)}%0A` +
-                  `*Contact:* ${encodeURIComponent(phone)}%0A` +
-                  `*Department:* ${encodeURIComponent(dept)}%0A` +
-                  `*Doctor:* ${encodeURIComponent(doc)}%0A` +
-                  `*Date:* ${encodeURIComponent(date)}%0A` +
-                  `*Time Slot:* ${encodeURIComponent(slot)}%0A` +
-                  `*Scheme/Billing:* ${encodeURIComponent(scheme)}`;
+  // 4. Send directly to Google Sheets via Web App API
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyW9bmbGFcIGH-XiO2OHRiQloM-QUa6drcWhkO2ewck2v_t52R2fzsrKH3pfvt78tOtWA/exec"; // <-- Paste your copied Web App URL here
 
-  // Patient ko direct WhatsApp par redirect karein
-  window.open(`https://wa.me/${hospitalWhatsApp}?text=${message}`, '_blank');
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(err => console.error("Sheet Error:", err));
 }
 
     function closeModal() {
